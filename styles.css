@@ -1,0 +1,35 @@
+/* Tipos de selecotres:
+1)selector de tipo */
+.h1-identikit{ text-align: center;text-align: center;color: rgb(0, 151, 206);}
+/* 2)Selector de clase se usa con un . mas el nombre de la cales. tengo que poner la calse en el h1 por ejemplo, y despues se lo carga acá con la forma y se usa para un grupo de elementos ya que se le puede poner la misma clase a diferentes elementos.*/
+/* .nombre-clase{} */
+
+/* 3) Selector ID se le pone nombre con un # y se lo llama en el css con # + nombre del id y se abren las llaves y todo los styles van dentro de las llaves */
+/* #prueba-id{
+
+} */
+.pregunta{text-align: center;background-color: rgb(255, 195, 127); }
+.body-trivia{ 
+    background-image: url(fotos-tp/d05816c05058fa6c47daa2b238efce1e.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+body{margin: 0;padding: 0;height: 100%; }
+.li_menu{display: inline;padding: 6px;margin: 3px;}
+
+.li_menu a{background-color: rgb(0, 151, 206);padding-right: 20px;padding-left: 20px;padding-top: 15px;padding-bottom: 15px ; width: 10px;border-radius: 4px;}
+.primer_album{text-align: center;}
+.info-portada{text-align: center;color: cornsilk;}
+.respuesta{background-color:rgb(255, 195, 127);display: inline-block;color: black;padding: 15px 20px;margin: 10px;text-decoration: none;text-align: center;border-radius: 8px;}
+.portada{ display: block; margin: 0 auto; width: 300px;   }
+.color-blanco{color: cornsilk;}
+.respuesta-incorrecta{color: cornsilk;text-align: center;}
+.tablas{text-align: center;}
+.volver-tabla{background-color:rgb(205, 229, 250);display: inline-block;color: black;padding: 15px 20px;margin: 10px;text-decoration: none;text-align: center;border-radius: 8px;}
+.fondo-index{background-image: url(fotos-tp/foto.jpg);
+    background-size: cover;
+    width:100%;
+    min-height: 100vh;}
+
+.letra-cancion {margin-top: 20px; padding: 10px; background-color: rgba(255,255,255,0.1);color: #fff;font-size: 14px;line-height: 1.5;max-height: 200px; overflow-y: auto;border-radius: 8px;}
