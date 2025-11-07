@@ -39,13 +39,34 @@ main aside div.perfil h2{
   text-align: center;
   border-radius: 8px;
 }
+.boton-posteos{
+  background-color:rgb(59, 210, 195);
+  display: inline-block;
+  color: black;
+  padding: 5px 10px;
+  margin: 5px;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.boton-redes{
+  background-color:tan;
+  display: inline-block;
+  color: black;
+  padding: 5px 10px;
+  margin: 5px;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 8px;
+}
 
 article {
   padding: 3vh;
 }
 
 footer {
-      background: rgb(101, 101, 182);
+      background: rgb(130, 130, 229);
       color: white;
       text-align: center;
       display: flex;
@@ -79,3 +100,13 @@ footer {
     margin: 0 auto;
     height: auto;       
 }
+
+.img-perfil {
+  width: 40vw;        
+  max-width: 180px;    
+  aspect-ratio: 1/1;   
+  object-fit: cover;   
+  border-radius: 50%;  
+  display: block;
+  margin: 0 auto;     
+    }
