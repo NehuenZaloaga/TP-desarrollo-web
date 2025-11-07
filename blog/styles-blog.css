@@ -16,13 +16,13 @@ main {
 
 section { 
   width: 70vw;
-  background-color: blueviolet;
+  background-color: rgb(215, 234, 249);
 }
 
 
 aside{
   width: 30vw;
-  background-color: aquamarine;
+  background-color:  rgb(44, 91, 132);
 }
 
 main aside div.perfil h2{

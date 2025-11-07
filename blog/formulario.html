@@ -1,22 +1,72 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0; box-sizing: border-box;}
+        nav li {display: inline;}
+        nav{ background-color: aquamarine; display: flex; justify-content: center;}
+        main {display: flex; justify-content: center;}
+        section{ width: 60vw; background-color: blueviolet;}
+        aside{width: 40vw; background-color: aquamarine;}
+    </style>
 </head>
 <body>
-    <form action="resibido.html">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre">
-        <br>
-        <label for="edad">Edad:</label>
-        <input type="number" id="edad">
-        <br>
-        <label for="email">Correo electronico</label>
-        <input type="email" name="email" id="email">
-        
+    <nav>
+        <ul>
+            <li>link</li>
+            <li>link</li>
+            <li>link</li>
+        </ul>
 
-    </form>
+    </nav>
+    <main>
+        <section style="padding-bottom: 40%;">
+            <form action="resibido.html">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre">
+                <br>
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad">
+                <br>
+                <label for="email">Correo electronico</label>
+                <input type="email" name="email" id="email">
+            </form>
+        </section>
+
+        <aside>
+            <div class="perfil">
+                <h2>Nehuen Zaloaga</h2>
+                <img src="" alt="foto/avatar">
+                <p>texto corto</p>
+                <hr>
+            </div>
+            <div class="redes">
+                <h2>Redes</h2>
+                <ul>
+                    <li><a href="">link1</a></li>
+                    <li><a href="">link2</a></li>
+                    <li><a href="">link3</a></li>
+                </ul>
+                <hr>
+            </div>
+            <div class="posteo">
+                <ul>
+                    <li><a href="">posteo1</a></li>
+                    <li><a href="">posteo2</a></li>
+                </ul>
+                <hr>
+            </div>
+            </div>
+            
+        </aside>
+
+    </main>
+    <footer>
+        Nehuen Zaloaga
+    </footer>
 </body>
 </html>
