@@ -110,3 +110,28 @@ footer {
   display: block;
   margin: 0 auto;     
     }
+/* --- VISTA CELULAR --- */
+@media (max-width: 768px) {
+
+  /* Hace que section (contenido) y aside (sidebar) se apilen */
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section, aside {
+    width: 95vw; /* ocupan casi toda la pantalla */
+  }
+
+  /* Para que las imágenes no se corten */
+  img, iframe, video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Foto de perfil un poco más grande en celular */
+  .img-perfil {
+    width: 60vw;
+    max-width: 200px;
+  }
+}
