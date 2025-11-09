@@ -1,36 +1,54 @@
-*{margin: 0;padding: 0; box-sizing: border-box;}
-nav li {display: inline;}
-li a {text-decoration: none;}
+/* RESET */
+*{ margin: 0; padding: 0; box-sizing: border-box; }
+
+/* NAV */
+nav li { display: inline; }
+li a { text-decoration: none; }
 nav {
   background-color: aquamarine;
   display: flex;
   justify-content: center;
+  padding: 10px 0;
 }
 
-
+/* CONTENEDOR PRINCIPAL */
 main {
   display: flex;
   justify-content: center;
+  gap: 24px;            /* separación entre contenido y sidebar */
+  padding: 20px;
+  max-width: 1200px;    /* ancho máximo en pantallas grandes */
+  margin: 0 auto;       /* centra la zona de contenido */
+  align-items: flex-start;
 }
 
-
-section { 
-  width: 70vw;
+/* CONTENIDO (artículos) */
+section {
+  /* ocupa todo el espacio disponible */
+  flex: 1 1 0;
+  min-width: 0;         /* importante para evitar overflow en flex */
   background-color: rgb(215, 234, 249);
+  padding: 20px;
 }
 
-
-aside{
-  width: 30vw;
-  background-color:  rgb(44, 91, 132);
+/* SIDEBAR */
+aside {
+  flex: 0 0 300px;      /* ancho fijo ideal en escritorio */
+  max-width: 320px;
+  background-color: rgb(44, 91, 132);
+  padding: 18px;
+  color: #fff;
+  border-radius: 6px;
 }
 
-main aside div.perfil h2{
+/* Titulos en perfil centrados */
+main aside .perfil h2 {
   text-align: center;
 }
 
+/* BOTONES */
 .boton{
-  background-color:rgb(255, 195, 127);
+  background-color: rgb(255, 195, 127);
   display: inline-block;
   color: black;
   padding: 5px 10px;
@@ -40,7 +58,7 @@ main aside div.perfil h2{
   border-radius: 8px;
 }
 .boton-posteos{
-  background-color:rgb(59, 210, 195);
+  background-color: rgb(59, 210, 195);
   display: inline-block;
   color: black;
   padding: 5px 10px;
@@ -49,9 +67,8 @@ main aside div.perfil h2{
   text-align: center;
   border-radius: 8px;
 }
-
 .boton-redes{
-  background-color:tan;
+  background-color: tan;
   display: inline-block;
   color: black;
   padding: 5px 10px;
@@ -61,77 +78,82 @@ main aside div.perfil h2{
   border-radius: 8px;
 }
 
+/* ARTÍCULOS */
 article {
-  padding: 3vh;
+  padding: 3vh 0;
 }
 
+/* FOOTER */
 footer {
-      background: rgb(130, 130, 229);
-      color: white;
-      text-align: center;
-      display: flex;
-      justify-content: space-around;
-      padding: 20px 0;
-    }
-    .columna {
-      flex: 1;
-      padding: 0 10px;
-    }
+  background: rgb(130, 130, 229);
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+}
+.columna { flex: 1; padding: 0 10px; }
+#columna2 ul { list-style: none; padding: 0; }
+#columna3 ul { padding: 0; margin: 0; }
+#columna3 ul li { display: inline-block; margin: 0 5px; }
 
-    #columna2 ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    #columna3 ul {
-      padding: 0;
-      margin: 0;
-    }
-
-    #columna3 ul li {
-      display: inline-block;
-      margin: 0 5px;
-    }
-
+/* IMÁGENES RESPONSIVAS */
 .imagen-centrada {
-    width: 50%;
-    max-width: 100%;    
-    display: block;
-    margin: 0 auto;
-    height: auto;       
+  width: 50%;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  height: auto;
 }
 
+/* FOTO DE PERFIL */
 .img-perfil {
-  width: 40vw;        
-  max-width: 180px;    
-  aspect-ratio: 1/1;   
-  object-fit: cover;   
-  border-radius: 50%;  
+  width: 100%;
+  max-width: 180px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 50%;
   display: block;
-  margin: 0 auto;     
-    }
+  margin: 0 auto;
+}
+
 /* --- VISTA CELULAR --- */
 @media (max-width: 768px) {
-
-  /* Hace que section (contenido) y aside (sidebar) se apilen */
+  /* apilar el layout: primero contenido, luego sidebar */
   main {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+    gap: 12px;
+    padding: 12px;
   }
 
-  section, aside {
-    width: 95vw; /* ocupan casi toda la pantalla */
+  /* content y sidebar ocupan todo */
+  section,
+  aside {
+    width: 100%;
+    max-width: 100%;
   }
 
-  /* Para que las imágenes no se corten */
+  /* ordenar: section primero */
+  section { order: 1; }
+  aside  { order: 2; }
+
+  /* Ajustes de imagenes y multimedia */
   img, iframe, video {
     max-width: 100%;
     height: auto;
+    display: block;
   }
 
-  /* Foto de perfil un poco más grande en celular */
+  /* foto perfil algo más grande para móvil */
   .img-perfil {
-    width: 60vw;
-    max-width: 200px;
+    width: 46vw;
+    max-width: 160px;
+  }
+
+  /* botones en sidebar centrados y apilados */
+  .boton-redes, .boton {
+    display: inline-block;
+    margin: 6px 6px;
   }
 }
