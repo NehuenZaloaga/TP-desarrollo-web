@@ -4,62 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles-blog.css">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="styles-formulario.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li>link</li>
-            <li>link</li>
-            <li>link</li>
-        </ul>
 
+    <nav>
+        <ul class="menu">
+            <li><a class="boton" href="blog.html">Inicio</a></li>
+            <li><a class="boton" href="formulario.html">Contacto</a></li>
+            <li><a class="boton" href="posteos.html">Posteos</a></li>
+            <li><a class="boton" href="../index.html">Linktree</a></li>
+        </ul>
     </nav>
-    <main>
-        <section style="padding-bottom: 40%;">
-            <form action="resibido.html">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre">
-                <br>
-                <label for="edad">Edad:</label>
-                <input type="number" id="edad">
-                <br>
-                <label for="email">Correo electronico</label>
-                <input type="email" name="email" id="email">
+
+    <main class="container">
+        
+        <section class="formulario">
+            <h1>Contactate completando el formulario</h1>
+            <form action="blog.html">
+                <label>Nombre:</label>
+                <input type="text">
+
+                <label>Edad:</label>
+                <input type="number">
+
+                <label>Email:</label>
+                <input type="email">
+
+                <label>Mensaje:</label>
+                <textarea></textarea>
+
+                <button type="submit">Enviar</button>
             </form>
         </section>
 
-        <aside>
+        <aside class="sidebar">
             <div class="perfil">
                 <h2>Nehuen Zaloaga</h2>
-                <img src="" alt="foto/avatar">
-                <p>texto corto</p>
-                <hr>
+                <img class="img-perfil" src="fotos-blog/IMG-20231201-WA0012.jpg" alt="foto/avatar">
+                <p>Estudiante de desarrollo de software en UADE</p>
             </div>
+
             <div class="redes">
                 <h2>Redes</h2>
                 <ul>
-                    <li><a href="">link1</a></li>
-                    <li><a href="">link2</a></li>
-                    <li><a href="">link3</a></li>
+                    <li><a href="">Instagram</a></li>
+                    <li><a href="">YouTube</a></li>
+                    <li><a href="">Twitter</a></li>
                 </ul>
-                <hr>
             </div>
-            <div class="posteo">
-                <ul>
-                    <li><a href="">posteo1</a></li>
-                    <li><a href="">posteo2</a></li>
-                </ul>
-                <hr>
+
+            <div class="suscripcion">
+                <h2>Suscribite</h2>
+                <input type="email" placeholder="Tu email">
+                <button>Enviar</button>
             </div>
-            </div>
-            
         </aside>
 
     </main>
-    <footer>
-        Nehuen Zaloaga
-    </footer>
+
 </body>
 </html>

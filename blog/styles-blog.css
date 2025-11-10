@@ -5,7 +5,7 @@
 nav li { display: inline; }
 li a { text-decoration: none; }
 nav {
-  background-color: aquamarine;
+  background-color: rgb(31, 30, 30);
   display: flex;
   justify-content: center;
   padding: 10px 0;
@@ -20,6 +20,7 @@ main {
   max-width: 1200px;    /* ancho máximo en pantallas grandes */
   margin: 0 auto;       /* centra la zona de contenido */
   align-items: flex-start;
+  background-color: black;
 }
 
 /* CONTENIDO (artículos) */

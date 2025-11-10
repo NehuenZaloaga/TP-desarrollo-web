@@ -1,0 +1,145 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* GENERAL */
+body {
+  background-color: #1b1b1b;
+  color: white;
+  font-family: sans-serif;
+}
+
+/* NAV */
+nav {
+  background-color: rgb(31, 30, 30);
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+nav ul.menu {
+  list-style: none;
+  display: flex;
+  gap: 12px;
+}
+
+nav li a,
+.boton {
+  text-decoration: none;
+  background-color: rgb(255, 195, 127);
+  padding: 8px 14px;
+  border-radius: 6px;
+  color: black;
+  display: inline-block;
+}
+
+/* LAYOUT PRINCIPAL */
+main.container {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+/* FORMULARIO */
+section.formulario {
+  flex: 1;
+  background-color: rgb(215, 234, 249);
+  padding: 20px;
+  border-radius: 8px;
+  color: black;
+}
+
+.formulario form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formulario input,
+.formulario textarea {
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  width: 100%;
+  resize: none;
+}
+
+.formulario button {
+  margin-top: 6px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: rgb(255, 195, 127);
+}
+
+/* SIDEBAR */
+aside.sidebar {
+  flex: 0 0 300px;
+  max-width: 320px;
+  background-color: rgb(44, 91, 132);
+  padding: 18px;
+  color: #fff;
+  border-radius: 6px;
+}
+
+/* PERFIL */
+.img-perfil {
+  width: 100%;
+  max-width: 180px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 10px auto;
+}
+
+/* BOTONES REDES */
+.redes ul,
+.suscripcion {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.redes li a {
+  background-color: tan;
+  display: inline-block;
+  padding: 6px 10px;
+  margin: 5px;
+  border-radius: 6px;
+  color: black;
+  text-decoration: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  main.container {
+    flex-direction: column;
+    padding: 12px;
+    gap: 12px;
+  }
+
+  aside.sidebar,
+  section.formulario {
+    width: 100%;
+  }
+
+  .img-perfil {
+    width: 46vw;
+    max-width: 160px;
+  }
+
+  nav ul.menu {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+}
