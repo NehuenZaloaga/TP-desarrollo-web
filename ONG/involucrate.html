@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="styles-ong.css">
+    <style>
+        .modalcont{position: absolute;width: 100%;height: 100%;top: 0;left: 0;display: block;background-color: rgb(159, 212, 237);text-align: center; }
+        .ocultar{display: none;}
+    </style>
+</head>
+<body>
+    
+    <nav>
+        <ul>
+            <li><a class="boton" href="ong-inicio.html">Inicio</a></li>
+            <li><a class="boton" href="contacto.html">Contacto</a></li>
+            <li><a class="boton" href="proyectos.html">Proyectos</a></li>
+            <li><a class="boton" href="nosotros.html">Nosotros</a></li>
+            <li><a class="boton" href="involucrate.html">Involucrate</a></li>
+        </ul>
+    </nav> 
+    <main>
+
+        <form id="contacto">
+            <label for="text">Nombre:</label>
+            <input type="text" id="Nombre" name="Nombre">
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido">
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad">
+            <label for="email">Correo electronico:</label>
+            <input type="email" id="email" name="email">
+            <label for="rol">¿Que rol quiere ocupar?:</label>
+            <input type="text" id="rol" name="rol">
+            <br>
+            <button type="submit">Enviar formulario</button>
+        </form>
+    </main>
+    <script>
+        document.getElementById('contacto').addEventListener('submit',function(e){
+            e.preventDefault();
+        
+            const modalcont= document.createElement('div')
+            modalcont.innerHTML=`<h1>Formulario enviado con exito</h1>
+            <button onclick="cerrarModal()">Cerrar</button>`
+            modalcont.classList.add('modalcont')
+            document.body.append(modalcont)
+        
+        })
+        function cerrarModal(){
+            const modal = document.querySelector('.modalcont')
+            modal.classList.toggle('ocultar');
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- NAVEGACIÓN --- */
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0; 
+    background-color: rgb(166, 192, 238); 
+}
+
+nav li {
+    display: inline;
+    list-style: none;
+}
+
+.boton {
+    background-color: rgb(46, 94, 206);
+    display: inline-block;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 8px;
+    font-family: sans-serif;
+    transition: background 0.3s;
+}
+
+.boton:hover {
+    background-color: rgb(30, 60, 150);
+}
+
+/* --- SECCIÓN PORTADA --- */
+.contenedor {
+    position: relative;
+    width: 100%;        
+    height: 60vh;       
+    overflow: hidden;   
+
+}
+
+/* Estilos específicos para la IMAGEN dentro del contenedor */
+.contenedor img {
+    width: 100%;        
+    height: 100%;       
+    object-fit: cover;
+    object-position: center;
+}
+
+.contenedor h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(193, 233, 233);
+    font-size: 3rem;    
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7); 
+    z-index: 10;        /* Asegura que el texto quede encima de la foto */
+}
+
+.fila-proyectos {
+    display: flex;           /* Activa el modo flexible */
+    justify-content: center; /* Los centra horizontalmente */
+    gap: 40px;               /* Espacio entre los dos proyectos */
+    flex-wrap: wrap;         /* IMPORTANTE: Si la pantalla es chica (celular), baja uno abajo del otro */
+    margin-bottom: 30px;     /* Espacio antes del botón */
+}
+.tarjeta {
+    background-color: #f9f9f9; /* Un color de fondo suave */
+    border-radius: 10px;       /* Bordes redondeados */
+    padding: 20px;
+    width: 45%;                /* Ocupan un poco menos de la mitad cada uno */
+    min-width: 300px;          /* Para que no se hagan muy flacos en pantallas chicas */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombrita elegante */
+    text-align: left;          /* Texto alineado a la izquierda dentro de la tarjeta */
+}
+.tarjeta h3 {
+    margin-bottom: 10px;
+    color: rgb(46, 94, 206);
+}
+.introduccion{
+    text-align: center;
+    padding: 50px 20px; 
+    background-color: white;}
+
+.llamado{
+    background-color: rgb(46, 94, 206);
+    padding: 60px 20px; 
+    text-align: center; 
+    color: white; 
+    margin-top: 50px;}
+
+#contacto input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#contacto {
+    display: flex;           /* Activa el modo flexible */
+    flex-direction: column;  /* IMPORTANTE: Pone los elementos en columna (uno abajo del otro) */
+    max-width: 400px;        /* Evita que el formulario sea eterno de ancho */
+    margin: 0 auto;          /* Centra el formulario en la pantalla */
+    padding: 20px;           /* Espacio interno */
+    gap: 10px;               /* Espacio entre cada pregunta */
+    background-color: #f4f4f4; /* Un colorcito de fondo suave */
+    border-radius: 8px;    /* Bordes redondeados */
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.collage-cuadrado {
+    display: grid;                 /* Activa la cuadrícula */
+    grid-template-columns: 1fr 1fr; /* Crea 2 columnas de igual tamaño */
+    grid-template-rows: 1fr 1fr;    /* Crea 2 filas de igual tamaño */
+    
+    width: 100%;                   /* Ancho del contenedor */
+    max-width: 600px;              /* Límite para que no sea gigante (ajustalo a gusto) */
+    margin: 0 auto;                /* Centra el collage en la página */
+    
+    aspect-ratio: 1 / 1;           /* TRUCO: Fuerza a que la caja sea siempre CUADRADA */
+    gap: 5px;                      /* Un pequeño espacio blanco entre fotos (opcional, pon 0 si no quieres) */
+}
+
+.collage-cuadrado img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;             /* Recorta la foto para llenar su cuadradito sin deformarse */
+    display: block;                /* Elimina espacios extraños debajo de las imágenes */
+    border-radius: 4px;            /* Opcional: bordes un poquito redondeados */
+}
