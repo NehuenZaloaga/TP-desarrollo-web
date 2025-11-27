@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyectos</title>
     <link rel="stylesheet" href="styles-ong.css">
-    <link rel="stylesheet" href="styles-ong.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         section {
         flex: 1 1 0;
@@ -17,62 +19,143 @@
 </head>
 <body>
     
-    <nav>
-        <ul>
+    <nav> <ul style="display: flex; width: 100%; list-style: none; margin: 0; padding: 0 20px; box-sizing: border-box; align-items: center;">
+            
+            <li><img src="fotos-ong/logo.png" alt="" style="height: 80px;"></li>
+            
             <li><a class="boton" href="ong-inicio.html">Inicio</a></li>
-            <li><a class="boton" href="contacto.html">Contacto</a></li>
-            <li><a class="boton" href="proyectos.html">Proyectos</a></li>
             <li><a class="boton" href="nosotros.html">Nosotros</a></li>
+            <li><a class="boton" href="proyectos.html">Proyectos</a></li>
             <li><a class="boton" href="involucrate.html">Involucrate</a></li>
+            <li><a class="boton" href="contacto.html">Contacto</a></li>
+            
+            <li style="margin-left: auto;">
+                <a class="boton" href="donaciones.html" style="background-color: #28a745;">Donaciones</a>
+            </li>
         </ul>
     </nav>
 
-        <section>
-            <article>
-                <h1>Taller de fútbol</h1>
-                <p>Más que un juego: fomentamos el compañerismo, la disciplina y la vida sana a través del deporte en equipo.</p>
-                <div style="background-color: azure;text-align: right;margin-left: 86%;">
-                    <p>Publicado 02/11/2025</p>
-                </div>
-                <img class="imagen-centrada" style="width: 20%;" src="fotos-ong/taller futbol.webp" alt="imagen de ejemplo">
-                <br>
-                <a class="boton" href="taller-futbol.html">leer mas</a>
-                <hr>
-            </article>
-            <article>
-                <h1>Salud mental</h1>
-                <p>Un espacio seguro de escucha y contención profesional para acompañar a los jóvenes en sus desafíos cotidianos</p>
-                <div style="background-color: azure;text-align: right;margin-left: 86%;">
-                    <p>Publicado 03/11/2025</p>
-                </div>
-                <img style="width: 20%;" class="imagen-centrada" src="fotos-ong/saludmental2.webp" alt="imagen de ejemplo">
-                <br>
-                <a class="boton" href="saludmental.html">leer mas</a>
-                <hr>
-            </article>
-            <article>
-                <h1>Apoyo Escolar y Merienda</h1>
-                <p>Acompañamiento académico para evitar la deserción escolar, sumado a una merienda nutritiva.</p>
-                <div style="background-color: azure;text-align: right;margin-left: 86%;">
-                    <p>Publicado 03/11/2025</p>
-                </div>
-                <img class="imagen-centrada" style="width: 40vh;" src="fotos-ong/merienda.jpg" alt="imagen de ejemplo">
-                <br>
-                <a class="boton" href="apoyoescolar.html">leer mas</a>
-                <hr>
-            </article>
-            <article>
-                <h1>Talleres de Oficios Digitales</h1>
-                <p>Cursos de computación básica y programación para brindar herramientas de futuro.</p>
-                <div style="background-color: azure;text-align: right;margin-left: 86%;">
-                    <p>Publicado 04/11/2025</p>
-                </div>
-                <img style="width: 50vh;" class="imagen-centrada" src="fotos-ong/chicos_herramientas_aula_taller_movil_tecnica_27.08.2018_maquina_maquinaria_alumnos_1.jpg" alt="imagen de ejemplo">
-                <br>
-                <a class="boton" href="oficiosdigitales.html">leer mas</a>
-                <hr>
-            </article>
-        </section>
+<h1 style="text-align: center; margin-top: 30px; color: rgb(46, 94, 206);">Nuestros Proyectos</h1>
+
+    <div class="filtros" style="text-align: center; margin: 20px 0;">
+        <button class="btn-filtro activo" onclick="filtrarProyectos('todos')">Todos</button>
+        <button class="btn-filtro" onclick="filtrarProyectos('deporte')">⚽ Deporte</button>
+        <button class="btn-filtro" onclick="filtrarProyectos('salud')">🧠 Salud</button>
+        <button class="btn-filtro" onclick="filtrarProyectos('educacion')">📚 Educación</button>
+    </div>
+
+    <section id="lista-proyectos" style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; background: white;">
+        
+        <article class="proyecto-item" data-categoria="deporte">
+            <div class="etiqueta-cat">Deporte</div>
+            <picture>
+            <source media="(max-width:768px)" srcset="fotos-ong/taller futbol">
+            <img src="fotos-ong/taller futbol.webp" alt="Taller de fútbol">
+            </picture>
+            
+            <div class="contenido-proyecto">
+                <h3>Taller de Fútbol</h3>
+                <p><strong>Más que un juego:</strong> fomentamos el compañerismo y la vida sana.</p>
+                <div class="fecha">Publicado: 02/11/2025</div>
+                <a class="boton-leer" href="taller-futbol.html">Leer más</a>
+            </div>
+        </article>
+
+        <article class="proyecto-item" data-categoria="salud">
+            <div class="etiqueta-cat" style="background: #9b59b6;">Salud</div>
+            <picture>
+                <source media="(max-width: 768px)" srcset="fotos-ong/saludmental2.webp">
+                <img src="fotos-ong/saludmental2.webp" alt="Taller de Salud Mental">
+            </picture>
+            
+            <div class="contenido-proyecto">
+                <h3>Salud Mental</h3>
+                <p>Espacio seguro de escucha y contención profesional para jóvenes.</p>
+                <div class="fecha">Publicado: 03/11/2025</div>
+                <a class="boton-leer" href="saludmental.html">Leer más</a>
+            </div>
+        </article>
+
+        <article class="proyecto-item" data-categoria="educacion">
+            <div class="etiqueta-cat" style="background: #e67e22;">Educación</div>
+            <img src="fotos-ong/merienda.jpg" alt="Apoyo Escolar">
+            
+            <div class="contenido-proyecto">
+                <h3>Apoyo Escolar</h3>
+                <p>Acompañamiento académico para evitar la deserción escolar.</p>
+                <div class="fecha">Publicado: 03/11/2025</div>
+                <a class="boton-leer" href="apoyoescolar.html">Leer más</a>
+            </div>
+        </article>
+
+        <article class="proyecto-item" data-categoria="educacion">
+            <div class="etiqueta-cat" style="background: #e67e22;">Educación</div>
+            <img src="fotos-ong/chicos_herramientas_aula_taller_movil_tecnica_27.08.2018_maquina_maquinaria_alumnos_1.jpg" alt="Taller Digital">
+            
+            <div class="contenido-proyecto">
+                <h3>Oficios Digitales</h3>
+                <p>Cursos de computación básica y programación para el futuro.</p>
+                <div class="fecha">Publicado: 04/11/2025</div>
+                <a class="boton-leer" href="oficiosdigitales.html">Leer más</a>
+            </div>
+        </article>
+
+    </section>
+
+<footer style="background-color: #333; color: white; padding-top: 40px;">
+    
+    <div style="display: flex; justify-content: space-around; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; padding-bottom: 20px;">
+
+        <div class="columna" style="width: 250px; margin-bottom: 20px;">
+            <h3 style="color: #FFD93D; margin-bottom: 15px;">Caminos de Barrio</h3>
+            <p style="font-size: 0.9rem; line-height: 1.5; color: #ccc;">
+                "Transformando la calle en oportunidades."
+            </p>
+            <br>
+            <p style="font-size: 0.9rem; color: #ccc;">
+                📍 Av. San Martín 1234<br>
+                📧 contacto@caminosdebarrio.org
+            </p>
+        </div>
+
+        <div class="columna" style="margin-bottom: 20px;">
+            <h3 style="color: #FFD93D; margin-bottom: 15px;">Secciones</h3>
+            <ul style="list-style: none; padding: 0; line-height: 2;">
+                <li><a href="ong-inicio.html" style="color: white; text-decoration: none;">Inicio</a></li>
+                <li><a href="proyectos.html" style="color: white; text-decoration: none;">Proyectos</a></li>
+                <li><a href="involucrate.html" style="color: white; text-decoration: none;">Voluntariado</a></li>
+                <li><a href="donaciones.html" style="color: white; text-decoration: none;">Donaciones</a></li>
+            </ul>
+        </div>
+
+        <div class="columna" style="margin-bottom: 20px;">
+            <h3 style="color: #FFD93D; margin-bottom: 15px;">Seguinos</h3>
+            <ul style="list-style: none; padding: 0; display: flex; gap: 10px;">
+                <li><a href="#" style="background: #E1306C; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-weight: bold;">IG</a></li>
+                <li><a href="#" style="background: #1877F2; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-weight: bold;">FB</a></li>
+                <li><a href="#" style="background: #000; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-weight: bold;">X</a></li>
+            </ul>
+            
+            <div style="margin-top: 20px;">
+                <p style="font-size: 0.8rem; margin-bottom: 5px;">Recibí novedades:</p>
+                <label for="email">Tu Email</label> <br>
+                <input type="email" style="padding: 5px; border-radius: 3px; border: none;">
+                <button style="background: #FFD93D; border: none; padding: 5px 10px; cursor: pointer;">OK</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div style="background-color: #222; text-align: center; padding: 15px; font-size: 0.8rem; color: #888; border-top: 1px solid #444;">
+        <p>
+            © 2025 Caminos de Barrio. Todos los derechos reservados. | 
+            Desarrollado por <strong style="color: white;">Nehuen Zaloaga</strong>
+        </p>
+        <br>
+        <a href="#" style="color: #FFD93D;">Volver arriba ↑</a>
+    </div>
+
+</footer>
     
 </body>
 </html>

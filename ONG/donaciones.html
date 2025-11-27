@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donaciones</title>
+    <link rel="stylesheet" href="styles-ong.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>body {
+    margin: 0;      /* Esto quita los bordes blancos molestos */
+    padding: 0;
+    width: 100%;
+}</style>
+</head>
+<body>
+    
+    <nav> <ul style="display: flex; width: 100%; list-style: none; margin: 0; padding: 0 20px; box-sizing: border-box; align-items: center;">
+            
+            <li><img src="fotos-ong/logo.png" alt="" style="height: 80px;"></li>
+            
+            <li><a class="boton" href="ong-inicio.html">Inicio</a></li>
+            <li><a class="boton" href="nosotros.html">Nosotros</a></li>
+            <li><a class="boton" href="proyectos.html">Proyectos</a></li>
+            <li><a class="boton" href="involucrate.html">Involucrate</a></li>
+            <li><a class="boton" href="contacto.html">Contacto</a></li>
+            
+            <li style="margin-left: auto;">
+                <a class="boton" href="donaciones.html" style="background-color: #28a745;">Donaciones</a>
+            </li>
+        </ul>
+    </nav>
+
+    <h1 style="text-align: center;">Donaciones</h1>
+
+    <main>
+    <section id="calculadora-donacion" style="background-color: #f9f9f9;">
+    <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+        
+        <h2 style="color: rgb(46, 94, 206); margin-bottom: 10px;">🛍️ Tienda Solidaria</h2>
+        <p style="margin-bottom: 40px; font-size: 1.1rem; color: #555;">
+            Hacé clic en los elementos que quieras donar para armar tu kit de ayuda.
+        </p>
+
+        <div class="contenedor-interactivo" style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center;">
+            
+            <div class="catalogo-grid">
+                <button onclick="agregarItem(1500, '☕ Merienda')" class="producto-card">
+                    <div class="icono">☕</div>
+                    <h3>Merienda</h3>
+                    <p class="precio">$1.500</p>
+                </button>
+
+                <button onclick="agregarItem(5000, '📚 Kit Escolar')" class="producto-card">
+                    <div class="icono">📚</div>
+                    <h3>Kit Escolar</h3>
+                    <p class="precio">$5.000</p>
+                </button>
+
+                <button onclick="agregarItem(8000, '⚽ Pelota')" class="producto-card">
+                    <div class="icono">⚽</div>
+                    <h3>Pelota</h3>
+                    <p class="precio">$8.000</p>
+                </button>
+
+                <button onclick="agregarItem(12000, '🧥 Abrigo')" class="producto-card">
+                    <div class="icono">🧥</div>
+                    <h3>Abrigo</h3>
+                    <p class="precio">$12.000</p>
+                </button>
+            </div>
+
+            <div class="resumen-donacion">
+                <h3>Tu Impacto</h3>
+                <div class="pantalla-total" id="total-monto">$0</div>
+                <p style="font-size: 0.9rem; color: #666; margin-bottom: 10px;">Estás donando:</p>
+                
+                <ul id="lista-items" style="list-style: none; padding: 0; margin-bottom: 20px; color: #333; font-weight: bold;">
+                    <li style="color: #999;">(Seleccioná productos)</li>
+                </ul>
+
+                <button class="boton" onclick="finalizarDonacion()" style="width: 100%; background-color: #28a745; margin-bottom: 10px;">
+                    ✅ Confirmar Donación
+                </button>
+                
+                <button onclick="borrarTodo()" style="background: none; border: none; color: #d9534f; cursor: pointer; text-decoration: underline;">
+                    🗑️ Empezar de cero
+                </button>
+            </div>
+    <section style="background-color: rgb(46, 94, 206); width: 100%; padding: 80px 20px; text-align: center; color: white; margin-top: 50px; box-sizing: border-box;">
+        
+        <h2 style="margin-bottom: 15px; font-size: 2.2rem; font-family: 'Nunito', sans-serif;">¿Preferís donar un monto libre?</h2>
+        <p style="margin-bottom: 40px; font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Ingresá cuánto querés aportar y calculá a cuántas meriendas equivale tu ayuda.
+        </p>
+
+        <div style="max-width: 600px; margin: 0 auto;">
+            
+            <label for="monto-libre" style="font-weight: bold; display: block; margin-bottom: 15px; font-size: 1.2rem; color: white;">
+                Ingresá el monto a donar ($):
+            </label>
+            
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                
+                <input type="number" id="monto-libre" placeholder="Ej: 5000" 
+                    style="flex: 1; padding: 15px; border: none; border-radius: 8px; font-size: 1.1rem; min-width: 150px; outline: none; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                
+                <button onclick="calcularImpacto()" class="boton" 
+                        style="background-color: #FFD93D; color: black; border: none; cursor: pointer; padding: 15px 30px; border-radius: 8px; font-weight: 800; font-size: 1.1rem; transition: transform 0.2s; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
+                    Calcular Impacto
+                </button>
+
+            </div>
+
+            <div id="resultado-calculo" style="margin-top: 30px; min-height: 40px; font-weight: bold; font-size: 1.4rem; color: #FFD93D;">
+                </div>
+
+        </div>
+
+    </section>
+
+
+
+</section>
+</main>
+<footer style="background-color: #333; color: white; padding-top: 40px;">
+    
+    <div style="display: flex; justify-content: space-around; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; padding-bottom: 20px;">
+
+        <div class="columna" style="width: 250px; margin-bottom: 20px;">
+            <h3 style="color: #FFD93D; margin-bottom: 15px;">Caminos de Barrio</h3>
+            <p style="font-size: 0.9rem; line-height: 1.5; color: #ccc;">
+                "Transformando la calle en oportunidades."
+            </p>
+            <br>
+            <p style="font-size: 0.9rem; color: #ccc;">
+                📍 Av. San Martín 1234<br>
+                📧 contacto@caminosdebarrio.org
+            </p>
+        </div>
+
+        <div class="columna" style="margin-bottom: 20px;">
+            <h3 style="color: #FFD93D; margin-bottom: 15px;">Secciones</h3>
+            <ul style="list-style: none; padding: 0; line-height: 2;">
+                <li><a href="ong-inicio.html" style="color: white; text-decoration: none;">Inicio</a></li>
+                <li><a href="proyectos.html" style="color: white; text-decoration: none;">Proyectos</a></li>
+                <li><a href="involucrate.html" style="color: white; text-decoration: none;">Voluntariado</a></li>
+                <li><a href="donaciones.html" style="color: white; text-decoration: none;">Donaciones</a></li>
+            </ul>
+        </div>
+
+        <div class="columna" style="margin-bottom: 20px;">
+            <h3 style="color: #FFD93D; margin-bottom: 15px;">Seguinos</h3>
+            <ul style="list-style: none; padding: 0; display: flex; gap: 10px;">
+                <li><a href="#" style="background: #E1306C; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-weight: bold;">IG</a></li>
+                <li><a href="#" style="background: #1877F2; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-weight: bold;">FB</a></li>
+                <li><a href="#" style="background: #000; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-weight: bold;">X</a></li>
+            </ul>
+            
+            <div style="margin-top: 20px;">
+                <p style="font-size: 0.8rem; margin-bottom: 5px;">Recibí novedades:</p>
+                <label for="email">Tu Email</label> <br>
+                <input type="email" style="padding: 5px; border-radius: 3px; border: none;">
+                <button style="background: #FFD93D; border: none; padding: 5px 10px; cursor: pointer;">OK</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div style="background-color: #222; text-align: center; padding: 15px; font-size: 0.8rem; color: #888; border-top: 1px solid #444;">
+        <p>
+            © 2025 Caminos de Barrio. Todos los derechos reservados. | 
+            Desarrollado por <strong style="color: white;">Nehuen Zaloaga</strong>
+        </p>
+        <br>
+        <a href="#" style="color: #FFD93D;">Volver arriba ↑</a>
+    </div>
+
+</footer>
+<script>
+    // Funciones de la calculadora. ppensé en agregar una calculadora tipo mercado para que el que dona pueda ver en lo que se invierte 
+    let total = 0;
+    let items = [];
+
+    // 1. Función para agregar productos y sumarlos para calcularlos todos en el acumulador total
+    function agregarItem(precio, nombre) {
+        total += precio;
+        // Agregar nombre a la lista
+        items.push(nombre);
+        actualizarInterfaz();
+    }
+
+    // Función para borrar todo el carrito
+    function borrarTodo() {
+        total = 0;
+        items = [];
+        actualizarInterfaz();
+    }
+
+    // 3. Función que dibuja el HTML nuevo
+    function actualizarInterfaz() {
+    
+        document.getElementById('total-monto').innerText = "$" + total.toLocaleString();    
+        const lista = document.getElementById('lista-items');
+        
+        if (items.length === 0) {
+            lista.innerHTML = '<li style="color: #999;">(Seleccioná productos)</li>';
+        } else {
+            
+            lista.innerHTML = items.map(item => `<li>• ${item}</li>`).join(''); 
+        }
+    }
+
+    // Alerta final para finalizar la donacion 
+    function finalizarDonacion() {
+        if (total === 0) {
+            alert("¡Tu carrito está vacío! Seleccioná algún producto primero.");
+            return;
+        }
+        
+        alert("¡Gracias! Te redirigiremos a Mercado Pago para donar $" + total);
+    }
+    function calcularImpacto() {
+        // En esta parte implemento la calculadora de ejemplo en que está en teams para tener dos metodos de donación
+        const inputMonto = document.getElementById('monto-libre');
+        const monto = parseFloat(inputMonto.value) || 0;
+
+        // Calculamos teniendo en cuenta en precio base 
+        // Math.floor redondea para abajo porque no podes dar media merienda
+        const meriendas = Math.floor(monto / 1500); 
+
+        // Mostramos el resultado con la cantidad de meriendas equivalentes
+        const elementoResultado = document.getElementById('resultado-calculo');
+        
+        if (meriendas > 0) {
+            elementoResultado.innerText = `¡Genial! Con $${monto} garantizás ${meriendas} meriendas. 🥛`;
+            elementoResultado.style.color = "black";
+        } else {
+            elementoResultado.innerText = "Ingresá un monto mayor a $1500 para ayudar.";
+            elementoResultado.style.color = "red";
+        }
+    }
+</script>
+</body>
+</html>

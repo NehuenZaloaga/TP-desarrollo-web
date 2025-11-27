@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-/* --- NAVEGACIÓN --- */
+
 nav {
     display: flex;
     justify-content: center;
@@ -34,7 +34,7 @@ nav li {
     background-color: rgb(30, 60, 150);
 }
 
-/* --- SECCIÓN PORTADA --- */
+
 .contenedor {
     position: relative;
     width: 100%;        
@@ -43,7 +43,7 @@ nav li {
 
 }
 
-/* Estilos específicos para la IMAGEN dentro del contenedor */
+
 .contenedor img {
     width: 100%;        
     height: 100%;       
@@ -63,20 +63,31 @@ nav li {
 }
 
 .fila-proyectos {
-    display: flex;           /* Activa el modo flexible */
-    justify-content: center; /* Los centra horizontalmente */
-    gap: 40px;               /* Espacio entre los dos proyectos */
-    flex-wrap: wrap;         /* IMPORTANTE: Si la pantalla es chica (celular), baja uno abajo del otro */
-    margin-bottom: 30px;     /* Espacio antes del botón */
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px; 
+    margin: 0 auto 40px; 
+    padding: 0 20px;
 }
 .tarjeta {
-    background-color: #f9f9f9; /* Un color de fondo suave */
-    border-radius: 10px;       /* Bordes redondeados */
+    background-color: #f9f9f9; 
+    border-radius: 10px;       
     padding: 20px;
-    width: 45%;                /* Ocupan un poco menos de la mitad cada uno */
-    min-width: 300px;          /* Para que no se hagan muy flacos en pantallas chicas */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombrita elegante */
-    text-align: left;          /* Texto alineado a la izquierda dentro de la tarjeta */
+    width: 45%;               
+    min-width: 300px;          
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+    text-align: left;          
+}
+.tarjeta img {
+    width: 100%;            
+    height: 300px;          
+    object-fit: cover;      
+    object-position: center;
+    border-radius: 8px;     
+    margin-top: 15px;       
+    display: block;         
 }
 .tarjeta h3 {
     margin-bottom: 10px;
@@ -100,34 +111,128 @@ nav li {
     border-radius: 5px;
 }
 #contacto {
-    display: flex;           /* Activa el modo flexible */
-    flex-direction: column;  /* IMPORTANTE: Pone los elementos en columna (uno abajo del otro) */
-    max-width: 400px;        /* Evita que el formulario sea eterno de ancho */
-    margin: 0 auto;          /* Centra el formulario en la pantalla */
-    padding: 20px;           /* Espacio interno */
-    gap: 10px;               /* Espacio entre cada pregunta */
-    background-color: #f4f4f4; /* Un colorcito de fondo suave */
-    border-radius: 8px;    /* Bordes redondeados */
+    display: flex;          
+    flex-direction: column; 
+    max-width: 400px;        
+    margin: 0 auto;          
+    padding: 20px;           
+    gap: 10px;               
+    background-color: #f4f4f4; 
+    border-radius: 8px;    
     margin-top: 10px;
     margin-bottom: 10px;
 }
 .collage-cuadrado {
-    display: grid;                 /* Activa la cuadrícula */
-    grid-template-columns: 1fr 1fr; /* Crea 2 columnas de igual tamaño */
-    grid-template-rows: 1fr 1fr;    /* Crea 2 filas de igual tamaño */
+    display: grid;                 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr;    
     
-    width: 100%;                   /* Ancho del contenedor */
-    max-width: 600px;              /* Límite para que no sea gigante (ajustalo a gusto) */
-    margin: 0 auto;                /* Centra el collage en la página */
+    width: 100%;
+    max-width: 600px;             
+    margin: 0 auto;                
     
-    aspect-ratio: 1 / 1;           /* TRUCO: Fuerza a que la caja sea siempre CUADRADA */
-    gap: 5px;                      /* Un pequeño espacio blanco entre fotos (opcional, pon 0 si no quieres) */
+    aspect-ratio: 1 / 1;           
+    gap: 5px;                      
 }
 
 .collage-cuadrado img {
     width: 100%;
     height: 100%;
-    object-fit: cover;             /* Recorta la foto para llenar su cuadradito sin deformarse */
-    display: block;                /* Elimina espacios extraños debajo de las imágenes */
-    border-radius: 4px;            /* Opcional: bordes un poquito redondeados */
+    object-fit: cover;             
+    display: block;                
+    border-radius: 4px;           
 }
+
+
+
+.boton-posteos{
+  background-color: rgb(59, 210, 195);
+  display: inline-block;
+  color: black;
+  padding: 5px 10px;
+  margin: 5px;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 8px;
+}
+.boton-formulario{
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-radius: 5px;
+    background-color: rgb(46, 94, 206);
+}
+/* Botones de Filtro */
+.btn-filtro {
+    padding: 10px 20px;
+    margin: 5px;
+    border: 2px solid rgb(46, 94, 206);
+    background: white;
+    color: rgb(46, 94, 206);
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-filtro:hover, .btn-filtro.activo {
+    background: rgb(46, 94, 206);
+    color: white;
+}
+
+/* Tarjeta de Proyecto */
+.proyecto-item {
+    width: 300px; /* Ancho fijo para que sean iguales */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    background: white;
+    transition: transform 0.3s;
+}
+
+.proyecto-item:hover {
+    transform: translateY(-5px);
+}
+
+.proyecto-item img {
+    width: 100%;
+    height: 200px; /* Altura fija para la foto */
+    object-fit: cover; /* Recorte automático */
+}
+
+.contenido-proyecto {
+    padding: 20px;
+}
+
+.etiqueta-cat {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #28a745;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.fecha {
+    font-size: 0.8rem;
+    color: #888;
+    margin: 10px 0;
+    text-align: right;
+}
+
+.boton-leer {
+    display: block;
+    text-align: center;
+    background: rgb(46, 94, 206);
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+body { font-family: 'Open Sans', sans-serif; }
+h1, h2, h3, h4 { font-family: 'Nunito', sans-serif; }

@@ -6,38 +6,82 @@
     <title>Contacto</title>
     <link rel="stylesheet" href="styles-ong.css">
     <style>
-        .modalcont{position: absolute;width: 100%;height: 100%;top: 0;left: 0;display: block;background-color: rgb(159, 212, 237);text-align: center; }
+        .modalcont{position: absolute;width: 100%;height: 100%;top: 0;left: 0;display: block;background-color:rgb(166, 192, 238);text-align: center; }
         .ocultar{display: none;}
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     
-    <nav>
-        <ul>
+    <nav> <ul style="display: flex; width: 100%; list-style: none; margin: 0; padding: 0 20px; box-sizing: border-box; align-items: center;">
+            
+            <li><img src="fotos-ong/logo.png" alt="" style="height: 80px;"></li>
+            
             <li><a class="boton" href="ong-inicio.html">Inicio</a></li>
-            <li><a class="boton" href="contacto.html">Contacto</a></li>
-            <li><a class="boton" href="proyectos.html">Proyectos</a></li>
             <li><a class="boton" href="nosotros.html">Nosotros</a></li>
+            <li><a class="boton" href="proyectos.html">Proyectos</a></li>
             <li><a class="boton" href="involucrate.html">Involucrate</a></li>
+            <li><a class="boton" href="contacto.html">Contacto</a></li>
+            
+            <li style="margin-left: auto;">
+                <a class="boton" href="donaciones.html" style="background-color: #28a745;">Donaciones</a>
+            </li>
         </ul>
-    </nav> 
+    </nav>
     <main>
 
+            <h1 style="text-align: center;">Formulario de contacto</h1>
+            <p style="text-align: center;">Si preferís que nosotros te llamemos, completá este formulario. Leemos todos los correos y te respondemos en menos de 24 horas.</p>
+
         <form id="contacto">
-            <label for="text">Nombre</label>
-            <input type="text" id="Nombre" name="Nombre">
+            <label for="Nombre">Nombre</label>
+            <input type="text" id="Nombre" name="Nombre" required>
             <label for="apellido">Apellido</label>
-            <input type="text" id="apellido" name="apellido">
+            <input type="text" id="apellido" name="apellido" required>
             <label for="edad">Edad</label>
             <input type="number" id="edad" name="edad">
             <label for="telefono">Numero de telefono</label>
             <input type="number" id="telefono" name="telefono">
             <label for="email">Correo electronico</label>
-            <input type="email" id="email" name="email">
+            <input type="email" id="email" name="email" required>
+            <label for="mensaje">Mensaje</label>
+            <input type="text" id="mensaje" name="mensaje" required></input>
             <br>
-            <button type="submit">Enviar formulario</button>
+            <button class="boton-formulario" type="submit">Enviar formulario</button>
         </form>
-        <div style="background-color:rgb(166, 192, 238) ;">
+       <hr style="border: 0; border-top: 1px solid #eee; margin: 40px 0;">     
+        <div style="display: flex; text-align: center;padding-top: 20px;justify-content: center;padding-bottom: 20px;">
+                
+            
+                <div style="display: inline; margin-left: 60px;margin-right: 60px;">
+                    <div style="font-size: 2rem;"><img style="max-width: 60px;" src="fotos-ong/mapas-de-google.png" alt=""></div>
+                    <h3>Nuestra Sede</h3>
+                    <p>Av. San Martín 1234, Buenos Aires</p>
+                    <p style="font-size: 0.9rem; color: #777;">(Lunes a Viernes de 10 a 18hs)</p>
+                </div>
+
+                <div style="display: inline; margin-left: 60px;margin-right: 60px;">
+                    <div style="font-size: 2rem;"><img style="max-width: 60px;" src="fotos-ong/whatsapp.png" alt=""></div>
+                    <h3>WhatsApp</h3>
+                    <p>+54 11 1234-5678</p>
+                    <a href="#" style="color: rgb(46, 94, 206); text-decoration: none; font-weight: bold;">Enviar mensaje &rarr;</a>
+                </div>
+
+                <div style="display: inline; margin-left: 60px;margin-right: 60px;">
+                    <div style="font-size: 2rem;"><img style="max-width: 60px;" src="fotos-ong/gmail.png" alt=""></div>
+                    <h3>Correo</h3>
+                    <p>contacto@caminosdebarrio.org</p>
+                    <p style="font-size: 0.9rem; color: #777;">Respondemos en 24hs</p>
+                </div>
+
+        </div>
+
+
+
+    <hr style="border: 0; border-top: 1px solid #eee; margin: 40px 0;">
+        <div style="background-color:rgb(166, 192, 238) ; padding-bottom: 30px;">
             <h2 style="margin-bottom: 20px; color: #333;text-align: center;background-color:rgb(166, 192, 238) ;">Nuestra ubicación</h2>
             <div style="width: 100%; max-width: 800px; margin: 0 auto; border: 2px solid #ddd;">
                 <iframe
@@ -51,6 +95,60 @@
             </div>
         </div>
     </main>
+<footer style="background-color: #333; color: white; padding-top: 40px;">
+    
+    <div style="display: flex; justify-content: space-around; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; padding-bottom: 20px;">
+
+        <div class="columna" style="width: 250px; margin-bottom: 20px;">
+            <h3 style="color: #FFD93D; margin-bottom: 15px;">Caminos de Barrio</h3>
+            <p style="font-size: 0.9rem; line-height: 1.5; color: #ccc;">
+                "Transformando la calle en oportunidades."
+            </p>
+            <br>
+            <p style="font-size: 0.9rem; color: #ccc;">
+                📍 Av. San Martín 1234<br>
+                📧 contacto@caminosdebarrio.org
+            </p>
+        </div>
+
+        <div class="columna" style="margin-bottom: 20px;">
+            <h3 style="color: #FFD93D; margin-bottom: 15px;">Secciones</h3>
+            <ul style="list-style: none; padding: 0; line-height: 2;">
+                <li><a href="ong-inicio.html" style="color: white; text-decoration: none;">Inicio</a></li>
+                <li><a href="proyectos.html" style="color: white; text-decoration: none;">Proyectos</a></li>
+                <li><a href="involucrate.html" style="color: white; text-decoration: none;">Voluntariado</a></li>
+                <li><a href="donaciones.html" style="color: white; text-decoration: none;">Donaciones</a></li>
+            </ul>
+        </div>
+
+        <div class="columna" style="margin-bottom: 20px;">
+            <h3 style="color: #FFD93D; margin-bottom: 15px;">Seguinos</h3>
+            <ul style="list-style: none; padding: 0; display: flex; gap: 10px;">
+                <li><a href="#" style="background: #E1306C; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-weight: bold;">IG</a></li>
+                <li><a href="#" style="background: #1877F2; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-weight: bold;">FB</a></li>
+                <li><a href="#" style="background: #000; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-weight: bold;">X</a></li>
+            </ul>
+            
+            <div style="margin-top: 20px;">
+                <p style="font-size: 0.8rem; margin-bottom: 5px;">Recibí novedades:</p>
+                <label for="email">Tu Email</label> <br>
+                <input type="email" style="padding: 5px; border-radius: 3px; border: none;">
+                <button style="background: #FFD93D; border: none; padding: 5px 10px; cursor: pointer;">OK</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div style="background-color: #222; text-align: center; padding: 15px; font-size: 0.8rem; color: #888; border-top: 1px solid #444;">
+        <p>
+            © 2025 Caminos de Barrio. Todos los derechos reservados. | 
+            Desarrollado por <strong style="color: white;">Nehuen Zaloaga</strong>
+        </p>
+        <br>
+        <a href="#" style="color: #FFD93D;">Volver arriba ↑</a>
+    </div>
+
+</footer>
     <script>
         document.getElementById('contacto').addEventListener('submit',function(e){
             e.preventDefault();
