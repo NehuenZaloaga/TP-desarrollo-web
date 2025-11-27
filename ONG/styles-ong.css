@@ -236,3 +236,68 @@ nav li {
 
 body { font-family: 'Open Sans', sans-serif; }
 h1, h2, h3, h4 { font-family: 'Nunito', sans-serif; }
+
+@media (max-width: 768px) {
+
+    /* --- 1. ARREGLAR EL MENÚ DE NAVEGACIÓN --- */
+    nav ul {
+        flex-direction: column; /* Pone los botones uno abajo del otro */
+        gap: 10px;              /* Espacio entre botones */
+        padding: 20px 0;        /* Un poco de aire arriba y abajo */
+    }
+
+    nav li {
+        width: 100%;            /* Que cada botón ocupe todo el ancho */
+        text-align: center;     /* Texto centrado */
+    }
+
+    /* --- 2. ARREGLAR PÁGINA INICIO (Home) --- */
+    .fila-proyectos {
+        flex-direction: column; /* Pone las tarjetas en columna */
+        align-items: center;    /* Las centra */
+    }
+
+    .tarjeta {
+        width: 100%;            /* Que la tarjeta ocupe todo el ancho del celu */
+        max-width: 400px;       /* Pero que no se haga gigante */
+    }
+
+    /* --- 3. ARREGLAR PÁGINA PROYECTOS (La nueva con filtros) --- */
+    .proyecto-item {
+        width: 100%;            /* Tarjeta ocupa todo el ancho */
+    }
+
+    .filtros {
+        display: flex;
+        flex-wrap: wrap;        /* Permite que los botones bajen si no entran */
+        justify-content: center;
+    }
+
+    /* --- 4. ARREGLAR PÁGINA DONACIONES (Tienda) --- */
+    .contenedor-interactivo {
+        flex-direction: column; /* Pone el Catálogo arriba y el Carrito abajo */
+        align-items: center;
+    }
+
+    .catalogo-grid {
+        grid-template-columns: 1fr; /* 1 sola columna de productos (uno abajo de otro) */
+        width: 100%;
+    }
+
+    .resumen-donacion {
+        width: 100%;            /* El carrito ocupa todo el ancho */
+    }
+
+    /* --- 5. ARREGLAR PÁGINA NOSOTROS (Collage y Equipo) --- */
+    .contenedor-tarjetas {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* --- 6. ARREGLAR CONTACTO (Tarjetas de info) --- */
+    div[style*="display: flex"] { 
+        /* Esto agarra tus divs con estilos en línea que sean flex y los pone en columna */
+        flex-direction: column;
+        align-items: center;
+    }
+}
