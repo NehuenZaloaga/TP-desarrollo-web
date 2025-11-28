@@ -156,6 +156,23 @@
     </div>
 
 </footer>
+<script>
+    function filtrarProyectos(categoria) {
+        // 1. Obtener todos los proyectos
+        const proyectos = document.querySelectorAll('.proyecto-item');
+        
+        // 2. Recorrer uno por uno
+        proyectos.forEach(proyecto => {
+            // Si es 'todos' o coincide la categoría, mostrar
+            if (categoria === 'todos' || proyecto.getAttribute('data-categoria') === categoria) {
+                proyecto.style.display = 'block';
+            } else {
+                // Si no coincide, ocultar
+                proyecto.style.display = 'none';
+            }
+        });
+    }
+</script>
     
 </body>
 </html>

@@ -100,6 +100,49 @@
 
             </div>
         </section>
+        <section style="background-color: #FFD93D; padding: 50px 20px; text-align: center; margin-top: 40px;">
+    <h2 style="color: black; margin-bottom: 40px;">Nuestro Impacto en Números</h2>
+    
+    <div style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap;">
+        
+        <div class="dato">
+            <div class="numero" data-target="10" style="font-size: 3rem; font-weight: 800; color: rgb(46, 94, 206);">0</div>
+            <p style="font-weight: bold;">Años de Historia</p>
+        </div>
+
+        <div class="dato">
+            <div class="numero" data-target="350" style="font-size: 3rem; font-weight: 800; color: rgb(46, 94, 206);">0</div>
+            <p style="font-weight: bold;">Chicos Asistidos</p>
+        </div>
+
+        <div class="dato">
+            <div class="numero" data-target="25" style="font-size: 3rem; font-weight: 800; color: rgb(46, 94, 206);">0</div>
+            <p style="font-weight: bold;">Voluntarios Activos</p>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    const contadores = document.querySelectorAll('.numero');
+    const velocidad = 200; 
+
+    contadores.forEach(contador => {
+        const actualizarContador = () => {
+            const objetivo = +contador.getAttribute('data-target');
+            const actual = +contador.innerText;
+            const incremento = objetivo / velocidad;
+
+            if (actual < objetivo) {
+                contador.innerText = Math.ceil(actual + incremento);
+                setTimeout(actualizarContador, 20);
+            } else {
+                contador.innerText = objetivo;
+            }
+        };
+        actualizarContador();
+    });
+</script>
     </main>
 <footer style="background-color: #333; color: white; padding-top: 40px;">
     
