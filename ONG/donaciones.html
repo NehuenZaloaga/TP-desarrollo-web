@@ -188,7 +188,7 @@
     let total = 0;
     let items = [];
 
-    // 1. Función para agregar productos y sumarlos para calcularlos todos en el acumulador total
+    // Función para agregar productos y sumarlos para calcularlos todos en el acumulador total
     function agregarItem(precio, nombre) {
         total += precio;
         // Agregar nombre a la lista
@@ -203,7 +203,7 @@
         actualizarInterfaz();
     }
 
-    // 3. Función que dibuja el HTML nuevo
+    // Función que dibuja el HTML nuevo
     function actualizarInterfaz() {
     
         document.getElementById('total-monto').innerText = "$" + total.toLocaleString();    
